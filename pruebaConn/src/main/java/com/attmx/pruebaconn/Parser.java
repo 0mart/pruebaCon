@@ -1,12 +1,8 @@
 package com.attmx.pruebaconn;
  import java.io.BufferedReader;
-import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
 import java.util.ArrayList;
-import java.util.List;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 /**
  *
  * @author otrejov
@@ -21,8 +17,7 @@ public void leeArchivo () throws IOException{
         String csvFile = "E:\\listaIPs.csv";
         String linea = "";
         String[] columnas;
-        String[] arrTMP = new String[];
-
+        String[] arrTMP = null;
         br = new BufferedReader(new FileReader(csvFile));
         while ((linea = br.readLine()) != null) {
             if (!linea.contains("#")) {
@@ -38,7 +33,7 @@ public void leeArchivo () throws IOException{
             }
         }
         System.out.println("Lista páginas web http:");
-        for (String tmp : listaWeb) {
+        for (String[] tmp : listaWeb) {
             System.out.println(tmp);
                  
         }
